@@ -12,6 +12,5 @@ if root not in sys.path:
     sys.path.insert(0, root.as_posix())
 
 import mypythontools_cicd as cicd
-import mypythontools
 
 cicd.tests.setup_tests(matplotlib_test_backend=True)

@@ -1,6 +1,6 @@
-*************
-mypythontools
-*************
+********
+pyvueeel
+********
 
-.. automodule:: mypythontools
+.. automodule:: pyvueeel
     :noindex:
