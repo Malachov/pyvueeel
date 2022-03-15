@@ -76,11 +76,7 @@ def run_gui(
     if devel is None:
         # env var MY_PYTHON_VUE_ENVIRONMENT is configured and added with pyinstaller automatically
         # in build module
-        devel = (
-            False
-            if os.environ.get("MY_PYTHON_VUE_ENVIRONMENT") == "production"
-            else True
-        )
+        devel = False if os.environ.get("MY_PYTHON_VUE_ENVIRONMENT") == "production" else True
 
     # Whether run is from .exe or from python
     is_built = True if getattr(sys, "frozen", False) else False
@@ -119,9 +115,7 @@ def run_gui(
                 ).parent
 
     if not gui_path.exists():
-        raise FileNotFoundError(
-            "Web files not found, setup `build_gui_path` (where builded index.html is)."
-        )
+        raise FileNotFoundError("Web files not found, setup `build_gui_path` (where builded index.html is).")
 
     if devel:
 
@@ -208,9 +202,7 @@ def expose(callback_function: Callable) -> None:
             if callable(expose_error_callback):
                 expose_error_callback()  # pylint: disable=not-callable
             else:
-                mylogging.traceback(
-                    f"Unexpected error in function `{callback_function.__name__}`"
-                )
+                mylogging.traceback(f"Unexpected error in function `{callback_function.__name__}`")
 
     eel._expose(callback_function.__name__, inner)  # pylint: disable=protected-access
 

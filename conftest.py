@@ -1,6 +1,5 @@
 """Runs before every pytest test. Used automatically (at least at VS Code)."""
 from __future__ import annotations
-import os
 from pathlib import Path
 import sys
 
