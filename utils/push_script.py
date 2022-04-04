@@ -7,10 +7,14 @@ if __name__ == "__main__":
     project_utils_pipeline(
         reformat=True,
         test=True,
-        test_options={"virtualenvs": ["venv/37", "venv/310"]},  # , "wsl_virtualenvs": "venv/linux"
+        test_options={
+            "virtualenvs": ["venv/37", "venv/310"],
+            "sync_requirements": "infer",
+            "wsl_virtualenvs": "venv/linux",
+        },
         version="increment",
         docs=True,
-        sync_requirements=True,
+        sync_requirements=None,
         commit_and_push_git=True,
         commit_message="New commit",
         tag="__version__",

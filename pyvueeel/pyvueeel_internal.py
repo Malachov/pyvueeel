@@ -9,7 +9,6 @@ import warnings
 
 from typing_extensions import Literal
 
-import EelForkExcludeFiles as eel
 import mylogging
 from mypythontools.paths import find_path, PathLike
 from mypythontools import types
@@ -20,7 +19,7 @@ if TYPE_CHECKING:
     import pandas as pd
 
     # import mydatapreprocessing as mdp
-
+import pyvueeel
 
 expose_error_callback: None | Callable[..., None] = None
 json_to_py = types.json_to_py
@@ -140,10 +139,10 @@ def run_gui(
         port = 0
         init_files = [".js", ".html"]
 
-    eel.init(
+    pyvueeel.eel.init(
         directory.as_posix(),
         init_files,
-        exclude_patterns=["chunk-vendors"],
+        exlcude_patterns=["chunk-vendors"],
     )
 
     if is_multiprocessing:
@@ -155,7 +154,7 @@ def run_gui(
 
     try:
 
-        eel.start(
+        pyvueeel.eel.start(
             page,
             mode=app,
             cmdline_args=["--disable-features=TranslateUI"],
@@ -166,7 +165,7 @@ def run_gui(
         )
 
     except OSError:
-        eel.start(
+        pyvueeel.eel.start(
             page,
             mode="edge",
             host="localhost",
@@ -199,12 +198,12 @@ def expose(callback_function: Callable) -> None:
             return callback_function(*args, **kwargs)
 
         except Exception:  # pylint: disable=broad-except
-            if callable(expose_error_callback):
-                expose_error_callback()  # pylint: disable=not-callable
+            if callable(pyvueeel.expose_error_callback):
+                pyvueeel.expose_error_callback()  # pylint: disable=not-callable
             else:
                 mylogging.traceback(f"Unexpected error in function `{callback_function.__name__}`")
 
-    eel._expose(callback_function.__name__, inner)  # pylint: disable=protected-access
+    pyvueeel.eel._expose(callback_function.__name__, inner)  # pylint: disable=protected-access
 
 
 def to_vue_plotly(data: np.ndarray | pd.DataFrame, names: list = None) -> dict:

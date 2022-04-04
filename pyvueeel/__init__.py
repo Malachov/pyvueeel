@@ -31,11 +31,7 @@
 It contains functions for running eel, overriding eel.expose decorator, converting json to correct python
 format or transform data into form for vue tables and plots.
 
-Go on
-
-https://pyvueeel.readthedocs.io/#project-starter
-
-for example with working examples.
+Try [cookiecutter template](https://github.com/Malachov/project-starter-cookiecutter) for working examples.
 
 Image of such an app
 
@@ -43,12 +39,30 @@ Image of such an app
     :width: 620
     :alt: project-starter-gui
     :align: center
+
+
+Links
+=====
+
+Official documentation - https://pyvueeel.readthedocs.io/
+
+Official repo - https://github.com/Malachov/pyvueeel
+
+Installation
+============
+
+Python >=3.6 (Python 2 is not supported).
+
+Install with::
+
+    pip install pyvueeel
 """
 import mylogging as __mylogging
 
+import EelForkExcludeFiles as eel
+
 from pyvueeel.pyvueeel_internal import (
     expose,
-    eel,
     expose_error_callback,
     json_to_py,
     run_gui,
@@ -66,7 +80,7 @@ __all__ = [
     "to_vue_plotly",
 ]
 
-__version__ = "0.0.4"
+__version__ = "0.0.5"
 
 __author__ = "Daniel Malachov"
 __license__ = "MIT"

@@ -1,12 +1,4 @@
-- [ ] Try to make oneliner config. Try property decorator on variable
-- [ ] Add do-just option or add sys args to functions so single task can be executed simply
-- [ ] Remove project.rst as it is in index.rst via automodule
-- [ ] In configuration use type annotation for type verification. Implement Literal as options.
-- [ ] Check if coverage from doctest included
-- [ ] Add tests to plot from predictit
-- [ ] Transform starter to cookiecutter
-- [ ] Create GIF of VS Code task
-- [ ] Better test coverage (doctest in functions + check if in coverage)
-- [ ] Check if in pyinstaller better way than hidden imports (add to analysis to build only necessary files)
-- [ ] Finish start vue in debug from python
+- [ ] Update to Vue 3 tools and update all the tools and libraries
+  - [Tools](https://v3-migration.vuejs.org/recommendations.html) 
+  - [Code](https://vueschool.io/articles/vuejs-tutorials/how-to-migrate-from-vue-cli-to-vite/) 
  
