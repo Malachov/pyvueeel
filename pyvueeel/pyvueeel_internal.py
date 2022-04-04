@@ -19,7 +19,8 @@ if TYPE_CHECKING:
     import pandas as pd
 
     # import mydatapreprocessing as mdp
-import pyvueeel
+
+from . import eel
 
 expose_error_callback: None | Callable[..., None] = None
 json_to_py = types.json_to_py
@@ -139,7 +140,7 @@ def run_gui(
         port = 0
         init_files = [".js", ".html"]
 
-    pyvueeel.eel.init(
+    eel.init(
         directory.as_posix(),
         init_files,
         exlcude_patterns=["chunk-vendors"],
@@ -154,7 +155,7 @@ def run_gui(
 
     try:
 
-        pyvueeel.eel.start(
+        eel.start(
             page,
             mode=app,
             cmdline_args=["--disable-features=TranslateUI"],
@@ -165,7 +166,7 @@ def run_gui(
         )
 
     except OSError:
-        pyvueeel.eel.start(
+        eel.start(
             page,
             mode="edge",
             host="localhost",
@@ -198,12 +199,12 @@ def expose(callback_function: Callable) -> None:
             return callback_function(*args, **kwargs)
 
         except Exception:  # pylint: disable=broad-except
-            if callable(pyvueeel.expose_error_callback):
-                pyvueeel.expose_error_callback()  # pylint: disable=not-callable
+            if callable(expose_error_callback):
+                expose_error_callback()  # pylint: disable=not-callable
             else:
                 mylogging.traceback(f"Unexpected error in function `{callback_function.__name__}`")
 
-    pyvueeel.eel._expose(callback_function.__name__, inner)  # pylint: disable=protected-access
+    eel._expose(callback_function.__name__, inner)  # pylint: disable=protected-access
 
 
 def to_vue_plotly(data: np.ndarray | pd.DataFrame, names: list = None) -> dict:

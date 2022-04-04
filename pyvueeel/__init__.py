@@ -80,7 +80,7 @@ __all__ = [
     "to_vue_plotly",
 ]
 
-__version__ = "0.0.5"
+__version__ = "0.0.6"
 
 __author__ = "Daniel Malachov"
 __license__ = "MIT"
