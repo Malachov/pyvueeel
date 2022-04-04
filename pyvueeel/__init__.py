@@ -1,4 +1,4 @@
-"""Common functions for Python / Vue / Eel project.
+"""Common functions for Python/Vue/Eel project.
 
 .. image:: https://img.shields.io/pypi/pyversions/pyvueeel.svg
     :target: https://pypi.python.org/pypi/pyvueeel/
@@ -31,9 +31,15 @@
 It contains functions for running eel, overriding eel.expose decorator, converting json to correct python
 format or transform data into form for vue tables and plots.
 
-Try [cookiecutter template](https://github.com/Malachov/project-starter-cookiecutter) for working examples.
+Cookiecutter
+============
 
-Image of such an app
+Try cookiecutter template for working example.
+
+https://github.com/Malachov/project-starter-cookiecutter
+
+Printscreen
+===========
 
 .. image:: /_static/project-starter-gui.png
     :width: 620
@@ -56,6 +62,11 @@ Python >=3.6 (Python 2 is not supported).
 Install with::
 
     pip install pyvueeel
+
+Tutorial
+========
+
+Here you can find how to implement :doc:`Py/Vue/Eel application<content/pyvueeel-tutorial>`  from scratch.
 """
 import mylogging as __mylogging
 

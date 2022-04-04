@@ -1,6 +1,1 @@
-********
-pyvueeel
-********
-
-.. automodule:: pyvueeel
-    :noindex:
+.. include:: pyvueeel.rst
