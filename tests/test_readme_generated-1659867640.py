@@ -1,4 +1,4 @@
-"""pytest file built from c:/Users/Turtor/ownCloud/Github/pyvueeel/README.md"""
+"""pytest file built from D:/Github/pyvueeel/README.md"""
 
 
 def test_nothing_passes():

@@ -21,10 +21,20 @@ Official repo - [GitHub](https://github.com/Malachov/pyvueeel)
 
 ## Installation
 
-Python >=3.6 (Python 2 is not supported).
+Python >=3.7
 
 Install with
 
 ```console
 pip install pyvueeel
 ```
+
+Some functions need extra requirements. If you need such a functionality use
+
+```console
+pip install pyvueeel[data]
+```
+
+## From scratch tutorial
+
+Here you can find how to implement :doc:`Py/Vue/Eel application<content/pyvueeel-tutorial>`  from scratch.

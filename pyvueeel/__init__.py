@@ -46,7 +46,6 @@ Printscreen
     :alt: project-starter-gui
     :align: center
 
-
 Links
 =====
 
@@ -57,16 +56,21 @@ Official repo - https://github.com/Malachov/pyvueeel
 Installation
 ============
 
-Python >=3.6 (Python 2 is not supported).
+Python >=3.7.
 
 Install with::
 
     pip install pyvueeel
 
-Tutorial
-========
 
-Here you can find how to implement :doc:`Py/Vue/Eel application<content/pyvueeel-tutorial>`  from scratch.
+Some functions need extra requirements. If you need such a functionality use
+
+    pip install pyvueeel[data]
+
+From scratch tutorial
+=====================
+
+If you want to know how to make an app from the beginning, check `docs/source/content/pyvueeel-tutorial.rst`
 """
 import mylogging as __mylogging
 
